@@ -1,0 +1,93 @@
+body {
+    background-color: #99c;
+    font-family: Calibri, sans-serif;
+    margin: 0;
+}
+
+/* Header fijo */
+header {
+    position: fixed; /* Hacemos el header fijo */
+    top: 0; /* Lo colocamos en la parte superior */
+    left: 0; /* Lo alineamos a la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #555;
+    color: white;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    z-index: 1000; /* Aseguramos que esté por encima del contenido */
+}
+
+/* Añadimos padding-top al main para evitar que el contenido quede detrás del header */
+main {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu header */
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    max-width: 100%; /* Limita el ancho del h1 */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos del nav se ajusten en pantallas pequeñas */
+}
+nav ul li{
+    margin-top: 15px;
+}
+a {
+    color: #ccf;
+    text-decoration: none;
+}
+.logo {
+    width: 45px; /* Ajusta el tamaño del logo */
+    height: 45px;
+}
+
+
+/* Estilos para los enlaces del nav */
+nav ul li a {
+    padding: 5px 10px; /* Añadimos un poco de padding para mejor interacción */
+    transition: 0.5s;
+}
+
+/* Efecto hover para los elementos de la lista */
+nav ul li a:hover {
+    background-color: #99c; /* Cambia el color de fondo al pasar el mouse */
+    color: #555; /* Cambia el color del texto */
+    border-radius: 5px; /* Añade bordes redondeados */
+}
+
+
+
+
+
+
+/* Pantallas mas pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px; 
+    }
+
+    nav ul {
+        gap: 5px; 
+    }
+}
+
