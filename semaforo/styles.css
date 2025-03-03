@@ -1,0 +1,134 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    max-width: 120px;
+}
+
+.item {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.3; /* Luces apagadas por defecto */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.item p {
+    opacity: 0; /* Texto oculto por defecto */
+    transition: opacity 0.3s ease;
+    position: absolute;
+    margin: 0;
+}
+
+/* Estilos cuando el semáforo está activado */
+.container.active .item {
+    opacity: 0.3; /* Luces siguen apagadas inicialmente */
+}
+
+/* Efecto hover solo cuando el semáforo está activo */
+.container.active .item--rojo:hover {
+    background-color: red;
+    opacity: 1; /* Luz roja encendida */
+}
+
+.container.active .item--amarillo:hover {
+    background-color: yellow;
+    opacity: 1; /* Luz amarilla encendida */
+    color: black; /* Texto negro para mejor contraste */
+}
+
+.container.active .item--verde:hover {
+    background-color: green;
+    opacity: 1; /* Luz verde encendida */
+}
+
+.container.active .item:hover p {
+    opacity: 1; /* Muestra el texto al hacer hover */
+}
+
+/* Colores base de las luces (apagados) */
+.item--rojo {
+    background-color: rgba(255, 0, 0, 0.3); /* Rojo apagado */
+}
+
+.item--amarillo {
+    background-color: rgba(255, 255, 0, 0.3); /* Amarillo apagado */
+}
+
+.item--verde {
+    background-color: rgba(0, 128, 0, 0.3); /* Verde apagado */
+}
+
+/* Estilos del botón */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .item {
+        width: 70px;
+        height: 70px;
+        font-size: 10px;
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 768px) {
+    .container {
+        max-width: 250px;
+    }
+
+    .item {
+        width: 90px;
+        height: 90px;
+        font-size: 14px;
+    }
+}
